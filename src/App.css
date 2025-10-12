@@ -65,6 +65,7 @@ nav{
   gap: 48px;
   position: relative;
   z-index: 1; /* sit above gradient backdrop */
+  align-items: center;
 }
 
 .container1 > *{
@@ -123,27 +124,37 @@ nav{
   100% { transform: translateX(-50%); }
 }
 
-.buttons{
-  display: flex;
-  gap: 64px;
-  padding: 0; /* no padding */
-  justify-content: center;
-  align-items: center;
+.scroll-down {
+  width: 24px;
+  height: 24px;
+  border-right: 3px solid rgba(255, 255, 255, 0.7);
+  border-bottom: 3px solid rgba(255, 255, 255, 0.7);
+  transform: rotate(45deg);
+  animation: scrollDown 1.5s infinite;
+  display: inline-block;
+  position: relative;
+  margin: 0 auto;
 }
 
-.button{
-  background: rgba(255, 255, 255, 0.04); /* 4% opacity white */
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.46); /* 46% opacity white */
-  padding: 20px 56px; /* TB 20, LR 56 */
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 700;
+
+@keyframes scrollDown {
+  0% {
+    transform: rotate(45deg) translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: rotate(45deg) translateY(8px);
+    opacity: 0.6;
+  }
+  100% {
+    transform: rotate(45deg) translateY(0);
+    opacity: 1;
+  }
 }
 
-.button:hover{
-  background: rgba(255, 255, 255, 0.08);
-}
+
+
+
 
 .aboutme{
   display: flex;
@@ -201,6 +212,8 @@ nav{
   border-radius: 12px;
   display: block;
 }
+
+
 
 .container3{
   display: flex; /* horizontal layout */
@@ -339,6 +352,91 @@ nav{
   padding: 0; /* no padding per request */
 }
 
+.project__nexaio{
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* small internal spacing between header, desc, tools */
+  padding: 0; /* no padding per request */
+}
+
+.project__nexaio:hover {
+  transform: scale(1.02);
+  transition: 0.2s ease;
+}
+
+.project__philcon{
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* small internal spacing between header, desc, tools */
+  padding: 0; /* no padding per request */
+}
+
+.project__philcon:hover {
+  transform: scale(1.02);
+  transition: 0.2s ease;
+}
+
+.project__kwisaysayan{
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* small internal spacing between header, desc, tools */
+  padding: 0; /* no padding per request */
+}
+
+
+.project__kwisaysayan:hover {
+  transform: scale(1.02);
+  transition: 0.2s ease;
+}
+
+.project__nexus{
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* small internal spacing between header, desc, tools */
+  padding: 0; /* no padding per request */
+}
+
+.project__nexus:hover {
+  transform: scale(1.02);
+  transition: 0.2s ease;
+}
+
+.project__umak{
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* small internal spacing between header, desc, tools */
+  padding: 0; /* no padding per request */
+}
+
+.project__umak:hover {
+  transform: scale(1.02);
+  transition: 0.2s ease;
+}
+
+.project__jurassic{
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* small internal spacing between header, desc, tools */
+  padding: 0; /* no padding per request */
+}
+
+.project__jurassic:hover {
+  transform: scale(1.02);
+  transition: 0.2s ease;
+}
+
+.project__grocery{
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* small internal spacing between header, desc, tools */
+  padding: 0; /* no padding per request */
+}
+
+.project__grocery:hover {
+  transform: scale(1.02);
+  transition: 0.2s ease;
+}
+
 .project__header{
   font-weight: 600;
   font-size: 32px;
@@ -465,4 +563,33 @@ nav{
 
 .footer__button:hover{
   color: rgba(255, 255, 255, 0.8); /* slightly dim on hover */
+}
+
+/* Fade-in animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.fade-in-delay-1 {
+  animation-delay: 0.1s;
+}
+
+.fade-in-delay-2 {
+  animation-delay: 0.2s;
+}
+
+.fade-in-delay-3 {
+  animation-delay: 0.3s;
 }
