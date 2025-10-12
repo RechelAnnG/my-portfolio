@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { useEffect, useRef } from 'react';
+import { useNavigate } from "react-router-dom";
 
 function App() {
   const blobRef = useRef(null);
@@ -55,10 +56,38 @@ function App() {
     contactRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  
+
   // Resume and Projects handlers
   const openResume = () => {
     window.open('https://drive.google.com/file/d/1h1qq9-8B9F1fjNaJFq5pf08XKwnT4Tag/view?usp=sharing', '_blank');
   };
+
+  const navigate = useNavigate();
+
+  const goToNexaio = () => {
+    navigate("/nexaio");
+  };
+  const goToPhilcon = () => {
+    navigate("/philcon");
+  };
+  const goToKwisaysayan = () => {
+    navigate("/kwisaysayan");
+  };
+  const goToNexus = () => {
+    navigate("/nexus");
+  };
+  const goToUmak = () => {
+    navigate("/umak");
+  };
+  const goToJurassic = () => {
+    navigate("/jurassic");
+  };
+  const goToGrocery = () => {
+    navigate("/grocery");
+  };
+
+  
 
   return (
     <div className="App">
@@ -103,12 +132,8 @@ function App() {
           </div>
         </div>
 
-        <div className="buttons">
-          <button className="button" onClick={openResume}>View Resume</button>
-          <button className="button" onClick={scrollToProjects}>Projects</button>
-        </div>
-        
-        
+        <div className="scroll-down"></div>
+
       </div>
 
       <div className="container2" ref={aboutRef}>
@@ -162,7 +187,7 @@ function App() {
          <div className="projects__header">Projects</div>
 
         <div className="projects__content">
-          <div className="project">
+          <div className="project__nexaio" onClick={goToNexaio} style={{ cursor: 'pointer' }}>
             <div className="project__header">NEXA.IO</div>
             <div className="project__desc">Nexa.io is a sample mock-up website for a technology solutions
               company focused on helping businesses adapt and grow in the digital era.</div>
@@ -174,7 +199,7 @@ function App() {
           </div>
           <div className="project-divider"></div>
 
-          <div className="project">
+          <div className="project__philcon" onClick={goToPhilcon} style={{ cursor: 'pointer' }}>
             <div className="project__header">PHILIPPINE CONSORTIUM WEBSITE</div>
             <div className="project__desc">During my internship at the Philippine Consortium, I was responsible for redesigning the company website. I created the new layout in Figma and
               successfully implemented it on Wix to improve its overall look and usability.</div>
@@ -187,7 +212,7 @@ function App() {
           </div>
           <div className="project-divider"></div>
 
-          <div className="project">
+          <div className="project__kwisaysayan" onClick={goToKwisaysayan} style={{ cursor: 'pointer'}}>
             <div className="project__header">KWISAYSAYAN</div>
             <div className="project__desc">A web-based quiz game application designed to serve as a supplementary tool in teaching and
               learning Araling Panlipunan in a more engaging and interactive way.</div>
@@ -200,7 +225,7 @@ function App() {
           </div>
           <div className="project-divider"></div>
 
-          <div className="project">
+          <div className="project__nexus"  onClick={goToNexus} style={{ cursor: 'pointer'}}>
             <div className="project__header">NEXUS FINTECH SALES</div>
             <div className="project__desc">A Point of Sale (POS) application designed for Admin and Cashier users to efficiently process orders,
               manage inventory, monitor sales, handle supplier records, and maintain user accounts.</div>
@@ -213,7 +238,7 @@ function App() {
           </div>
           <div className="project-divider"></div>
 
-          <div className="project">
+          <div className="project__umak"  onClick={goToUmak} style={{ cursor: 'pointer'}}>
             <div className="project__header">UMAK NEXUS</div>
             <div className="project__desc">An Android application that serves as a one-stop platform for seamless and
               convenient campus shopping, designed specifically for the University of Makati community.</div>
@@ -226,7 +251,7 @@ function App() {
           </div>
           <div className="project-divider"></div>
 
-          <div className="project">
+          <div className="project__jurassic" onClick={goToJurassic} style={{cursor: 'pointer'}}>
             <div className="project__header">JURASSIC POT PH</div>
             <div className="project__desc">An e-commerce site showcasing fun, dinosaur-inspired plant pots that
               merge design creativity with a passion for low-maintenance greenery.</div>
@@ -239,7 +264,7 @@ function App() {
           </div>
           <div className="project-divider"></div>
 
-          <div className="project">
+          <div className="project__grocery" onClick={goToGrocery} style={{cursor: 'pointer'}}>
             <div className="project__header">GROCERY SHOP MANAGEMENT SYSTEM</div>
             <div className="project__desc">A desktop application built to streamline inventory,
               sales, and customer management for improved business efficiency.</div>
